@@ -1,0 +1,99 @@
+html {
+  font-family: "Noto Sans KR", sans-serif;
+}
+body {
+  margin: 0;
+}
+div,
+section,
+header,
+footer,
+p,
+h1,
+h2 {
+  box-sizing: border-box;
+}
+a {
+  color: royalblue;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.global-width {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.scroll-graphic {
+  overflow-x: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.graphic-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: 0.5s;
+
+  /* 브라우저에게 준비를 시킴. 남발하면 트래픽 올라갈 수 있으므로 적절히 싸용할 것 */
+  will-change: opacity;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.scroll-text {
+  position: relative;
+}
+
+.scene-img {
+  max-height: 100vh;
+}
+
+.step {
+  margin-bottom: 60vh;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.8);
+
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 3px;
+}
+
+.bird {
+  position: absolute;
+  left: 0;
+  bottom: 70%;
+  width: 100px;
+  /* 새가 제자리에 있는 걸 방지하기 위해, %는 해당 img의 100% */
+  transform: translateX(-100%);
+  /* 0,5초 후에 1.5초 동안 움직이겠다. */
+  transition: 1.5s 0.2s linear;
+}
+
+[data-index="5"] .bird {
+  left: 30%;
+  bottom: 30%;
+}
+
+.global-footer {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
